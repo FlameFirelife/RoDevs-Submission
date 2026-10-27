@@ -1,38 +1,42 @@
-# RoDevs-Submission
-The work i'll submit to apply for the Scripter role
-# HELIOS / Station 07
+# RoDevs submission
 
-a small co-op facility recovery game i made in Roblox.
+the code for my Scripter application.
 
-get fuel and spare fuses, restore the circuits, clear the air and evacuate. the systems depend on each other, so repairing something doesn't automatically mean it has power.
+i made a co-op facility recovery game for the submission. get supplies, refuel the generator, repair the circuits and wait for the air to clear before evacuating.
 
-## what's in here
-- server-controlled inventory and timed interactions
-- equipment locks so two players can't use the same machine at once
-- actions cancel if you walk out of range, without taking your materials
-- power demand, overloads and ventilation
-- evacuation conditions and shift resets
+## what it does
+
+- inventory with carry limits
+- timed repairs and refuelling
+- equipment locks so two players can't work on the same thing at once
+- cancellation if you walk too far away, without losing materials
+- power demand and overloads
+- ventilation and air toxicity
+- evacuation and starting another shift
 - saved escapes, repairs and best time
+
+repairing a circuit doesn't automatically power it. the generator needs fuel, ventilation needs power, and the exit stays locked until the required circuits are powered and the air is safe.
 
 ## scripts
 
-- **GridModel** handles the power simulation and evacuation conditions
-- **InteractionService** checks actions, locks equipment and handles cancellation
+- **GridModel** handles power, overloads, air toxicity and exit conditions
+- **InteractionService** checks actions, locks equipment and cancels interrupted actions
 - **InventoryService** handles materials and carry limits
-- **DataService** loads and saves progress using Roblox DataStores
+- **DataService** loads and saves player progress
 - **WorldService** updates the equipment, lights and door
-- **FacilityController** handles the client HUD
-- **CircuitView** builds the circuit list and repair objectives
-- **Config** contains the circuit definitions, actions and settings
+- **FacilityController** handles the HUD
+- **CircuitView** builds the circuit list and picks repair objectives
+- **Config** has the circuit settings and action definitions
 - **Bootstrap** connects everything
 
-## expansion
-[the video](https://youtu.be/tBULAf-sEAo) (linked just in case) shows me adding circuit C, its breaker and a connected lamp.
+## adding more stuff
 
-the HUD picks up the new circuit automatically. the existing repair and power systems handle it without adding separate logic for C.
+in [the video](https://youtu.be/tBULAf-sEAo) (linked just in case), i add circuit C, a breaker and a lamp connected to it.
+
+i add the circuit and repair action in Config, then set up the equipment. C shows up in the HUD automatically, and repairing it powers the lamp. no separate C logic needed in the simulation or HUD.
 
 ## testing
 
-tested multiplayer on PC and my Samsung Galaxy A34. gameplay ran smoothly on the phone.
+tested multiplayer using my PC and my A34 for the second account. it ran smoothly on the phone too.
 
-also checked that saved progress carries over after leaving and rejoining.
+i also checked that progress saves after leaving and rejoining. the extra clip at the end shows an action cancelling when i walk away, with the fuel can still in my inventory.
