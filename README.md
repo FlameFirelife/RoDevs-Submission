@@ -7,7 +7,6 @@ a small co-op facility recovery game i made in Roblox.
 get fuel and spare fuses, restore the circuits, clear the air and evacuate. the systems depend on each other, so repairing something doesn't automatically mean it has power.
 
 ## what's in here
-
 - server-controlled inventory and timed interactions
 - equipment locks so two players can't use the same machine at once
 - actions cancel if you walk out of range, without taking your materials
@@ -28,8 +27,7 @@ get fuel and spare fuses, restore the circuits, clear the air and evacuate. the 
 - **Bootstrap** connects everything
 
 ## expansion
-
-the video shows me adding circuit C, its breaker and a connected lamp.
+[the video](https://youtu.be/tBULAf-sEAo) (linked just in case) shows me adding circuit C, its breaker and a connected lamp.
 
 the HUD picks up the new circuit automatically. the existing repair and power systems handle it without adding separate logic for C.
 
